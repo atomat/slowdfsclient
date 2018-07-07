@@ -39,10 +39,10 @@ slowdfs的客户端SDK，Java版（JavaSE-1.7）。
 代码样例
 ```
 public static void main(String[] args) throws Exception {
-		String[] hosts = new String[] { "http://127.0.0.1:8080", "http://127.0.0.1:18080" };
-		Map<String, Object> map = fileUploadToHosts(hosts, "public", "E:\\tmp/summer.zip", "summer.zip");
-		System.out.println(map);
-		ClientUtil.fileDownloadFromHosts(hosts,"/download/public/96b12b3f5a545865ee7a4e338d494914.zi","e:/tmp/abc.zip");
+	String[] hosts = new String[] { "http://127.0.0.1:8080", "http://127.0.0.1:18080" };
+	Map<String, Object> map = fileUploadToHosts(hosts, "public", "E:\\tmp/summer.zip", "summer.zip");
+	System.out.println(map);
+	ClientUtil.fileDownloadFromHosts(hosts,"/download/public/96b12b3f5a545865ee7a4e338d494914.zi","e:/tmp/abc.zip");
 	}
 ```
 ******
@@ -68,23 +68,23 @@ public static void main(String[] args) throws Exception {
 	 */
 	public static String fileUpload(String slowdfsHost, String url, String groupId, String srcPathFile, String fileName,int iConnectTimeout, int iSocketTimeout) 
 ```
-返回值说明：
+上传文件返回值说明：
 ```
 {
 	"result": "succ",  // 文件上传请求的成功失败标志。succ-成功，err-失败
 	"uploadfiles": [{  // 文件上传结果，数组形式，支持上传多个文件
-		"groupId": "default",  // 
-		"originalFileName": "testa",
-		"prefix": "",
-		"fileSize": 1001014,
-		"fileMD5Value": "65b58ce5a3803e69f3d548c86d65bf35",
-		"fileId": "a05b46178c89e988d902de9f7312fc20",
-		"fileName": "a05b46178c89e988d902de9f7312fc20",
-		"downloadUrl": "/download/default/a05b46178c89e988d902de9f7312fc20",
-		"storePathFile": "/6/b5/65b58ce5a3803e69f3d548c86d65bf35",
-		"dateTime": "20180707 23:58:13.445 +0800",
-		"uploadStatus": true,
-		"msg": ""
+		"groupId": "default",  // 文件所属组
+		"originalFileName": "testa.zip",  // 原始文件名
+		"prefix": "zip",  // 文件名后缀
+		"fileSize": 1001014,  // 文件大小
+		"fileMD5Value": "65b58ce5a3803e69f3d548c86d65bf35",  // 文件内容的MD5值
+		"fileId": "a05b46178c89e988d902de9f7312fc20",  // 文件ID（全局唯一）
+		"fileName": "a05b46178c89e988d902de9f7312fc20.zip", // 在服务器端的文件名
+		"downloadUrl": "/download/default/a05b46178c89e988d902de9f7312fc20.zip",  // 文件下载URL
+		"storePathFile": "/6/b5/65b58ce5a3803e69f3d548c86d65bf35.zip",  // 文件在服务器端的存储路径
+		"dateTime": "20180707 23:58:13.445 +0800",  // 文件上传时间
+		"uploadStatus": true,  // 文件上传结果，boolean类型。true-上传成功，false-上传失败
+		"msg": ""  // 当文件上传失败时，msg中存放的是失败原因
 	}]
 }
 ```
