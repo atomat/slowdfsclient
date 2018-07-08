@@ -36,6 +36,20 @@ slowdfs的客户端SDK，Java版（JavaSE-1.7）。
 	 */
 	public static void fileDownloadFromHosts(String[] hosts, String downloadUrl, String pathFile)
 ```
+```
+/**
+	 * 删除指定文件，slowdfs集群会自动同步删除操作
+	 * 
+	 * @param slowdfsHost
+	 *            slowdfs服务器地址
+	 * @param groupId
+	 *            文件所属组
+	 * @param fileId
+	 *            文件ID
+	 * @throws Exception
+	 */
+	public static void deleteFile(String slowdfsHost, String groupId, String fileId)
+```
 代码样例
 ```
 public static void main(String[] args) throws Exception {
