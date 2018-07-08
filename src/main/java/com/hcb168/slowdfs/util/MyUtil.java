@@ -72,40 +72,4 @@ public class MyUtil {
 		}
 		return array;
 	}
-	
-	/**
-	 * 快速Get请求，用于调用rest接口
-	 * 
-	 * @param hostUrl
-	 * @return
-	 * @throws Exception
-	 */
-	public static String GetQuickly(String hostUrl) throws Exception {
-		CloseableHttpClient httpClient = HttpClients.createDefault();
-		CloseableHttpResponse response = null;
-		try {
-			HttpGet httpGet = new HttpGet(hostUrl); // 使用Get方法提交
-			RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(300).setSocketTimeout(1000)
-					.setConnectionRequestTimeout(300).build();
-			httpGet.setConfig(requestConfig);
-
-			response = httpClient.execute(httpGet);
-
-			int statusCode = response.getStatusLine().getStatusCode();
-			if (statusCode == HttpStatus.SC_OK) {
-				HttpEntity resEntity = response.getEntity();
-				String result = EntityUtils.toString(resEntity);
-				EntityUtils.consume(resEntity);
-				return result;
-			} else {
-				throw new Exception("访问url=" + hostUrl + "异常，statusCode=" + statusCode);
-			}
-
-		} catch (Exception e) {
-			throw e;
-		} finally {
-			HttpClientUtils.closeQuietly(response);
-			HttpClientUtils.closeQuietly(httpClient);
-		}
-	}
 }
