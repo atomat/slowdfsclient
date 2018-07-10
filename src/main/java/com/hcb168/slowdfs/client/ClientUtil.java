@@ -320,13 +320,13 @@ public class ClientUtil {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String[] hosts = new String[] { "http://127.0.0.1:8080", "http://127.0.0.1:18080" };
-		Map<String, Object> map = fileUploadToHosts(hosts, "public", "E:\\tmp/summer.zip", "summer.zip");
+		String[] hosts = new String[] { "http://127.0.0.1:8080", "http://192.168.251.101:8080" };
+		Map<String, Object> map = fileUploadToHosts(hosts, "public", "E:\\tmp/需求说明书.doc", "需求说明书.doc");
 		System.out.println(map);
 
-		ClientUtil.fileDownloadFromHosts(hosts, "/download/public/96b12b3f5a545865ee7a4e338d494914.zip",
-				"e:/tmp/abc.zip");
+		ClientUtil.fileDownloadFromHosts(hosts, "/download/public/84c881776273fc9a3e6c12348ecf39e6.doc",
+				"e:/tmp/需求说明书3.doc");
 
-		deleteFile(hosts[1], "/slowdfs", "public", "96b12b3f5a545865ee7a4e338d494914");
+		deleteFile(hosts[1], "/slowdfs", "public", "3dbf02307eda03225124c0c324075cec");
 	}
 }
