@@ -82,6 +82,8 @@ public class ClientUtil {
 		} finally {
 			HttpClientUtils.closeQuietly(response);
 			HttpClientUtils.closeQuietly(httpClient);
+			response = null;
+			httpClient = null;
 		}
 		return result;
 	}
@@ -220,6 +222,8 @@ public class ClientUtil {
 		} finally {
 			HttpClientUtils.closeQuietly(response);
 			HttpClientUtils.closeQuietly(httpClient);
+			response = null;
+			httpClient = null;
 		}
 	}
 
@@ -323,6 +327,6 @@ public class ClientUtil {
 		ClientUtil.fileDownloadFromHosts(hosts, "/download/public/96b12b3f5a545865ee7a4e338d494914.zip",
 				"e:/tmp/abc.zip");
 
-		deleteFile(hosts[1], "/slowdfs", "public1", "96b12b3f5a545865ee7a4e338d494914");
+		deleteFile(hosts[1], "/slowdfs", "public", "96b12b3f5a545865ee7a4e338d494914");
 	}
 }
