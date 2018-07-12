@@ -16,6 +16,47 @@ slowdfs的客户端SDK，Java版（JavaSE-1.7）。
 	 *            待上传文件所在的路径(带文件名的全路径)
 	 * @param fileName
 	 *            文件名
+	 * @param iConnectTimeout
+	 *            ConnectTimeout单位毫秒
+	 * @param iSocketTimeout
+	 *            SocketTimeout单位毫秒
+	 * @return 文件上传信息
+	 * @throws Exception
+	 */
+	public static Map<String, Object> fileUploadToHosts(String[] hosts, String groupId, String srcPathFile,
+			String fileName, int iConnectTimeout, int iSocketTimeout) throws Exception
+```
+```
+/**
+	 * 随机选择一个集群节点下载文件
+	 * 
+	 * @param hosts
+	 *            slowdfs集群各节点
+	 * @param downloadUrl
+	 *            文件下载url
+	 * @param pathFile
+	 *            放置下载文件的目标路径(带文件名的全路径)
+	 * @param iConnectTimeout
+	 *            ConnectTimeout单位毫秒
+	 * @param iSocketTimeout
+	 *            SocketTimeout单位毫秒
+	 * @throws Exception
+	 */
+	public static void fileDownloadFromHosts(String[] hosts, String downloadUrl, String pathFile, int iConnectTimeout,
+			int iSocketTimeout) throws Exception
+```
+```
+/**
+	 * 随机选择一个集群节点上传文件
+	 * 
+	 * @param hosts
+	 *            slowdfs集群各节点
+	 * @param groupId
+	 *            文件所属组
+	 * @param srcPathFile
+	 *            待上传文件所在的路径(带文件名的全路径)
+	 * @param fileName
+	 *            文件名
 	 * @return 文件上传信息
 	 * @throws Exception
 	 */
