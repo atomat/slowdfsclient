@@ -162,7 +162,7 @@ public static void main(String[] args) throws Exception {
 	 */
 	public static String fileDownload(String slowdfsHost, String webContextPath, String downloadUrl, String pathFile,int iConnectTimeout, int iSocketTimeout) 
 ```
-
+ 
 ## 依赖
 * commons-io 2.2
 * httpclient 4.5.5
