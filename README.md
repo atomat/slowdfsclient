@@ -1,5 +1,5 @@
 # slowdfs client
-slowdfs的客户端SDK，Java版（JavaSE-1.7）。
+slowdfs的客户端SDK，Java版（JavaSE-1.7）及以上。
 
 ## 使用说明
 将slowdfsclient.jar放到相应的lib目录下。
